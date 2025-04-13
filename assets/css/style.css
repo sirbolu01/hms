@@ -1,0 +1,1080 @@
+:root {
+    --primary-color: #009688;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --border-color: #eee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+
+/* Preloader*/
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease-out;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo-animate {
+    width: 220px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(0.95); }
+}
+
+
+/* Illustration Section */
+
+.mainillustration-content {
+       
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+}
+
+.illustration-container {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.illustration {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.illustration img {
+    width: 400px;
+    height: auto;
+}
+
+
+/* Login */
+
+.auth-body{
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.logo_login {
+    width: 80px;
+    margin: 0 auto 2rem;
+}
+
+.welcome-image {
+    width: 200px;
+    margin: 0 auto 1.5rem;
+}
+
+.auth-title {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #00897b;
+}
+
+.btn-outline {
+    background: white;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.auth-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.auth-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    .auth-container {
+        margin: 1rem;
+    }
+}
+
+/* Navigation Styles */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+}
+
+.nav-overlay.active {
+    display: block;
+}
+
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    transition: left 0.3s ease;
+    z-index: 999;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.side-nav.active {
+    left: 0;
+}
+
+.nav-header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.user-name {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.user-email {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.nav-menu {
+    padding: 1rem 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: #f5f5f5;
+    color: var(--primary-color);
+}
+
+.nav-link i {
+    width: 24px;
+    margin-right: 1rem;
+    color: var(--primary-color);
+}
+
+.nav-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 1rem 0;
+}
+
+/* Main Content Styles */
+.main-header {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 997;
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+.main-content {
+    margin-top: calc(var(--header-height) + 1rem);
+    padding: 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.profile-header {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    background: #e0f2f1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.info-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-card i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+.info-content h3 {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    font-weight: normal;
+}
+
+.info-content p {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.8rem;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    z-index: 996;
+}
+
+.bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    gap: 0.3rem;
+}
+
+.bottom-nav a.active {
+    color: var(--primary-color);
+}
+
+.bottom-nav i {
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        padding: 2rem;
+    }
+
+    .bottom-nav {
+        display: none;
+    }
+}
+
+/* Dashboard */
+
+.dashboard-container {
+    max-width: 480px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+  }
+
+
+  .profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .profile-icon {
+    width: 80px;
+    height: 80px;
+    background: whitesmoke;
+    border-radius: 12px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .profile-email {
+    color: #666;
+    font-size: 14px;
+  }
+
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+  }
+
+  .menu-item:last-child {
+    border-bottom: none;
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    color: #009688;
+  }
+
+  .menu-text {
+    flex-grow: 1;
+    color: #333;
+  }
+
+  .menu-arrow {
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .dashboard-container {
+      margin: 10px;
+      padding: 15px;
+    }
+  }
+
+/* prescriptions*/
+.prescription-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .prescriptions-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .prescription-group {
+    margin-bottom: 40px;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .date-range {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .drug-item {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 6px;
+  }
+
+  .drug-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .drug-name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .drug-description {
+    font-size: 14px;
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    .prescription-container {
+      padding: 20px;
+    }
+
+    .prescription-group {
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .drug-item {
+      padding: 12px;
+    }
+
+    .date-range {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .appointment-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .appointment-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .booking-form {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .calendar {
+    margin: 24px 0;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .calendar-month {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+  }
+
+  .calendar-day {
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .calendar-day:hover {
+    background: #f0f0f0;
+  }
+
+  .calendar-day.selected {
+    background: #009688;
+    color: white;
+  }
+
+  .calendar-weekday {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    padding: 4px;
+  }
+
+  .time-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 24px 0;
+  }
+
+  .time-slot {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .time-slot:hover {
+    background: #f0f0f0;
+  }
+
+  .time-slot.selected {
+    background: #009688;
+    color: white;
+    border-color: #009688;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #009688;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover {
+    background: #00897b;
+  }
+
+  .appointments-list {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .appointment-card {
+    padding: 16px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+
+  .appointment-doctor {
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .appointment-time {
+    color: #666;
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+  }
+
+  @media (max-width: 768px) {
+    .appointment-container {
+      padding: 20px;
+    }
+
+    .appointment-content {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .time-slots {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* about us */
+
+  .about-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+
+  .main-content, .sidebar {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .about-text {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .doctor-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 16px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+  }
+
+  .doctor-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 16px;
+  }
+
+  .doctor-info {
+    flex: 1;
+  }
+
+  .doctor-name {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  .doctor-specialty {
+    color: #666;
+    font-size: 14px;
+  }
+
+  .contact-info {
+    margin-top: 24px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #666;
+  }
+
+
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  .credits {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+  }
+
+  .credits a {
+    color: #009688;
+    text-decoration: none;
+  }
+
+  .credits a:hover {
+    text-decoration: underline;
+  }
+
+  /* doctors Appointment */
+
+  .view-appointment-container {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.header-section {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    outline: none;
+    color: #4b5563;
+}
+
+.search-input:focus {
+    border-color: #9ca3af;
+    box-shadow: 0 0 0 2px rgba(156,163,175,0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.appointment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.appointment-card {
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.appointment-card:hover {
+    background-color: #f9fafb;
+}
+
+.appointment-info {
+    flex: 1;
+}
+
+.doctor-name {
+    color: #111827;
+    font-size: 16px;
+    margin: 0 0 4px 0;
+    font-weight: 500;
+}
+
+.appointment-date {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0;
+}
+@media (max-width: 640px) {
+    .appointment-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .button-group {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+
+@media (max-width: 640px) {
+  .patient-info .education-section {
+      padding: 0.75rem;
+  }
+
+  .patient-info .items-container {
+      gap: 1rem;
+      padding: 0.25rem;
+  }
+
+  .patient-info .item-card {
+      padding: 1.25rem;
+      min-height: 150px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .patient-info .item-card {
+      transition: none;
+  }
+
+  .patient-info .item-card:hover {
+      transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .patient-info .item-button {
+      border-width: 3px;
+  }
+}
+
+/* patient records */
+.patient-info .items-section {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 120px;
+}
+
+.patient-info .items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.patient-info .item-card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 180px;
+  box-shadow: 0 4px 6px #003d38;
+}
+
+.patient-info .item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px #003d38;
+}
+
+.patient-info .item-title {
+  color: #009688;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.patient-info .item-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  color: #009688;
+  border: 2px solid #009688;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  margin-top: auto;
+  width: fit-content;
+}
+
+.patient-info .right-button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  color: #009688;
+  border: 2px solid #009688;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  margin-top: auto;
+  width: fit-content;
+  margin-left: 150px; 
+  margin-top: -50px;
+}
+
+.patient-info .item-button:hover,
+.patient-info .item-button:focus {
+  background: #009688;
+  color: white;
+  outline: none;
+}

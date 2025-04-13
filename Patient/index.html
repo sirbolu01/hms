@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS Patient Portal</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="shortcut icon" href="../assets/images/icon.png" type="image/x-icon">
+    <style>
+        .title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .subtitle span {
+            color: #009688;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 40px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #009688;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #E8F5F3;
+            color: #009688;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader Section -->
+    <div class="preloader">
+        <img class="logo-animate" src="../assets/images/hms_logo.png" alt="">
+       
+    </div>
+
+    <div class="mainillustration-content">
+        <div class="illustration-container">
+            <div class="illustration">
+                <img src="../assets/images/preloader_images.png" alt="image_hospital">
+            </div>
+            <h1 class="title">HMS</h1>
+            <p class="subtitle">Patient Portal</p>
+            <p class="subtitle">Log in to your <span>Patient Portal</span> to access your appointments and more.</p>
+            <div class="button-container">
+              <a href="patient_login.php">
+                <button class="btn btn-primary">Login</button>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/preloader.js"></script>
+</body>
+</html>

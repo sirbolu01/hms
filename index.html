@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/x-icon">
+    <style>
+    :root {
+        --primary: #0d9488;
+        --secondary: #064e3b;
+        --light: #f0fdfa;
+        --dark: #111827;
+        --gray: #6b7280;
+        --light-gray: #e5e7eb;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background-color: #f9fafb;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Common Elements */
+    .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .section-title h2 {
+        font-size: 36px;
+        color: var(--dark);
+        margin-bottom: 15px;
+    }
+    
+    .login-btn, .secondary-btn {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .secondary-btn {
+        background-color: white;
+        color: var(--primary);
+        border: 1px solid var(--primary);
+    }
+    
+    .login-btn:hover, .secondary-btn:hover {
+        background-color: var(--secondary);
+        color: white;
+    }
+    
+    /* Header */
+    header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+    
+    /* Hero Section */
+    .landing-page .hero {
+        margin-top: 70px;
+        padding: 80px 0;
+        background: linear-gradient(135deg, var(--light) 0%, #d1fae5 100%);
+    }
+    
+    .landing-page .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .landing-page .hero-text, .landing-page .hero-image {
+        flex: 1;
+    }
+    
+    .landing-page .hero-text h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .landing-page .hero-btns {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .landing-page .hero-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Features Section */
+    .landing-page .features {
+        padding: 60px 0;
+    }
+    
+    .landing-page .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .landing-page .feature-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .landing-page .feature-icon {
+        background-color: var(--light);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    
+    .landing-page .feature-icon i {
+        color: var(--primary);
+        font-size: 20px;
+    }
+    
+    /* Footer */
+    footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    /* Media Queries - Only essential */
+    @media (max-width: 768px) {
+        .nav-links, .login-btn {
+            display: none;
+        }
+        
+        .landing-page .hero-content {
+            flex-direction: column;
+        }
+        
+        .landing-page .features-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="./assets/images/hms_logo.png" width="70px" alt="HMS Logo">
+                </div>
+                <div class="nav-links">
+                    <a href="Admin/admin_login.php">Admin</a>
+                    <a href="Doctor/doctor_login.php">Doctor</a>
+                    <a href="Receptionist/receptionist_login.php">Receptionist</a>
+                </div>
+                <a href="Patient/index.html"> <button class="login-btn">Login as Patient</button></a>
+               
+            </nav>
+        </div>
+    </header>
+    
+    
+    <!-- Main Landing Page Section -->
+    <section class="landing-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Modern Hospital Management System</h1>
+                        <p>Streamline your healthcare operations with our intuitive, comprehensive, and secure hospital management system. Designed for doctors, patients, and administrators.</p>
+                        <div class="hero-btns">
+                           <a href="Admin/admin_login.php"> <button class="secondary-btn">Admin</button></a>
+                           <a href="Doctor/doctor_login.php"> <button class="secondary-btn">Doctor</button></a>
+                           <a href="Receptionist/receptionist_login.php"> <button class="secondary-btn">Receptionist</button></a>
+                           <a href="Patient/index.html"> <button class="secondary-btn">Patient</button></a>
+
+
+
+                            
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="./assets/images/doctors_images.jpg" alt="Image by freepik.com">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Powerful Features</h2>
+                    <p>Our Hospital Management System comes with everything you need to run your healthcare facility efficiently</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Appointment Management</h3>
+                        <p>Easily schedule, reschedule, and manage appointments with an intuitive calendar interface.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h3>Prescription System</h3>
+                        <p>Create and manage digital prescriptions with automatic reminders for patients.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h3>Electronic Health Records</h3>
+                        <p>Maintain comprehensive patient records securely with easy access for authorized personnel.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Staff Management</h3>
+                        <p>Efficiently manage doctors, nurses, and administrative staff schedules and responsibilities.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Get insights into hospital operations with powerful reporting and analytics tools.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Billing & Payments</h3>
+                        <p>Streamline billing processes with integrated payment gateways and insurance processing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Hospital Management System. All rights reserved.</p>
+                <p>Hero Section Image by freepik.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
